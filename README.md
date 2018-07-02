@@ -1,5 +1,5 @@
 # MeowMeow
-A Twitter Clone using Node Express Postgres(Bookshelf and Knex.js as ORM) and React/Redux
+A Twitter Clone (with a cat Theme) using Node Express Postgres(Bookshelf and Knex.js as ORM) and React/Redux. Still in Progress.
 
 Clone this repository
 Create your own repository on github and change the remote git remote rm origin and then git remote add origin _______.
