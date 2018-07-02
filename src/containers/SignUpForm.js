@@ -1,33 +1,29 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom'
-import axios from 'axios'
+import { Link, Redirect } from 'react-router-dom'
 import PropTypes from "prop-types";
 
 class SignUpForm extends Component {
-    state = {
+  constructor(props) {
+    super(props);
+    this.state = {
       handle: "",
       firstName: "",
-      lastName: "",
-      signedIn: false
+      lastName: ""
     };
+  }
 
 
   handleSubmit = e => {
-    let { firstName, lastName, handle } = this.state;
     e.preventDefault();
-    axios
-      .post("http://localhost:5000/api/users", {
-        firstName,
-        lastName,
-        handle
-      })
+    this.props
+      .authUser("signup", this.state)
       .then(() => {
-        this.setState({
-          signedIn: true
-        });
+        // this.props.history.push("/");
+        <Redirect to="/" />
       })
       .catch(() => {
-        alert("something went wrong!");
+        // we failed to log in, display the error message
+        return;
       });
     }
 
@@ -42,16 +38,16 @@ class SignUpForm extends Component {
     const {
       heading,
       buttonText,
-      history
+      history,
+      removeError,
+      errors
       } = this.props;
-    history.listen(() => {
 
-    });
     return (
-      <div class="row" style={{height: "100vh"}}>
-        <div class="col-sm-6 mx-auto my-auto">
-          <div class="card">
-            <div class="card-body text-center">
+      <div className="row" style={{height: "100vh"}}>
+        <div className="col-sm-6 mx-auto my-auto">
+          <div className="card">
+            <div className="card-body text-center">
             <form onSubmit={this.handleSubmit}>
               <h2>{heading}</h2>
               {/* {errors.message && <div>{errors.message}</div>} */}

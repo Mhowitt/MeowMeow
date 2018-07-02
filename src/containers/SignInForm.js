@@ -6,10 +6,20 @@ class SignInForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      handle: "",
+      handle: ""
     };
   }
 
+    handleSubmit = e => {
+      e.preventDefault();
+      console.log('hit submit')
+      this.props.loginUser("signin", this.state).then(() =>{
+        this.props.history.push("/");
+      })
+      .catch(() => {
+        return;
+      })
+    }
 
 
   handleChange = e => {
@@ -21,7 +31,9 @@ class SignInForm extends Component {
     const {
       heading,
       buttonText,
-      history,
+      errors,
+      removeError,
+      history
     } = this.props;
     // history.listen(() => {
     //   removeError();
@@ -62,8 +74,11 @@ class SignInForm extends Component {
 }
 SignInForm.propTypes = {
   buttonText: PropTypes.string,
+  errors: PropTypes.object,
   heading: PropTypes.string,
   history: PropTypes.object,
+  loginUser: PropTypes.func,
+  removeError: PropTypes.func
 };
 
 export default SignInForm;

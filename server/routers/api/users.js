@@ -18,10 +18,10 @@ router
   .post((req, res) => {
     const { firstName, lastName, handle } = req.body
     const data = { firstName, lastName, handle }
-    return new User(data)
-    .save()
-    .then((user) => {
-       res.status(200).json({ user });
+      return new User(data)
+        .save()
+        .then((user) => {
+        res.status(200).json( user );
     })
     .catch(err => {
       res.status(500).json({error: true, data: {message: err.message}});

@@ -21,5 +21,5 @@ app.use((err, req, res, next) =>
 );
 
 app.listen(PORT, function() {
-  console.log("Getting started on port " + PORT);
+  console.log("Listening on port " + PORT);
 })

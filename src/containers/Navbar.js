@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { logout } from "../store/actions/auth";
 
 class Navbar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { user: null };
-  }
+  logout = e => {
+    e.preventDefault();
+    this.props.logout();
+  };
+
   render() {
     return (
       <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -25,6 +28,16 @@ class Navbar extends Component {
             <li className="nav-item">
               <button className="btn btn-outline-success my-2 my-sm-0" >Meow</button>
             </li>
+            {this.props.currentUser.isAuthenticated ?
+              <li className="nav-item">
+                <button className="btn btn-outline-danger my-2 my-sm-0" onClick={this.logout}>Logout</button>
+              </li>
+            :
+              <li className="nav-item">
+                <button className="btn btn-outline-danger my-2 my-sm-0" > <Link to="/signin">Sign In</Link></button>
+              </li>
+            }
+
           </ul>
           <form className="form-inline my-2 my-lg-0">
             <input className="form-control mr-sm-2" type="search" placeholder="Search" ariaLabel="Search" />
@@ -36,4 +49,15 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
+function mapStateToProps(state) {
+  return {
+    currentUser: state.currentUser
+  };
+}
+
+Navbar.propTypes = {
+  currentUser: PropTypes.object.isRequired,
+  logout: PropTypes.func.isRequired
+};
+
+export default connect(mapStateToProps, { logout })(Navbar);
