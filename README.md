@@ -6,10 +6,8 @@ Create your own repository on github and change the remote git remote rm origin 
 
 - cd into meow-meow
 - npm install
-- cd into server
 - createdb meow_meow-db
 - knex migrate:latest
-- cd back into main app.
 
 In one terminal tab:
 -npm run server
