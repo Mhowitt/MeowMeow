@@ -6,7 +6,7 @@ export function getMeows(type, data) {
   return async dispatch => {
     try {
       let meows = await apiCall("get", `api/posts`, {});
-      dispatch(setMeows(meows));
+      dispatch(setMeows(meows.data));
       dispatch(removeError());
       return;
     } catch (err) {
@@ -20,7 +20,7 @@ export function addMeows(type, data) {
   return async dispatch => {
     try {
       let newMeows = await apiCall("post", `api/posts`, data);
-      dispatch(setMeows(meows));
+      // dispatch(setMeows(meows));
       dispatch(removeError());
       return;
     } catch (err) {

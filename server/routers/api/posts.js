@@ -18,16 +18,13 @@ router
     });
   })
   .post((req, res) => {
-    const { firstName, lastName, handle } = req.body
-    const data = { firstName, lastName, handle }
-    Post.forge({
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      handle: req.body.handle
+    new Post({
+      text: req.body.meow,
+      user_id: req.body.user_id,
     })
     .save()
-    .then(function (post) {
-      res.json({error: false, data: {id: post.get('id')}});
+    .then((post) => {
+      res.status(200).json( post );
     })
     .catch(function (err) {
       res.status(500).json({error: true, data: {message: err.message}});
