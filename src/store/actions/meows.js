@@ -1,6 +1,6 @@
 import { apiCall } from "../../services/api";
 import { addError, removeError } from "./errors";
-import { SET_MEOWS } from "../actionTypes";
+import { SET_MEOWS, ADD_MEOW } from "../actionTypes";
 
 export function getMeows(type, data) {
   return async dispatch => {
@@ -20,7 +20,7 @@ export function addMeows(type, data) {
   return async dispatch => {
     try {
       let newMeows = await apiCall("post", `api/posts`, data);
-      // dispatch(setMeows(meows));
+      dispatch(meowAdd(newMeows));
       dispatch(removeError());
       return;
     } catch (err) {
@@ -33,6 +33,13 @@ export function addMeows(type, data) {
 export function setMeows(meows) {
   return {
     type: SET_MEOWS,
+    meows
+  };
+}
+
+export function meowAdd(meows) {
+  return {
+    type: ADD_MEOW,
     meows
   };
 }
