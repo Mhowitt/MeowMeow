@@ -16,8 +16,8 @@ class MeowForm extends Component {
       <div>
         <form>
           <div className="form-group">
-            <label for="meow">Example textarea</label>
-            <textarea className="form-control" id="meow" name="meow" value={this.state.meow} onChange={this.handleChange} rows="3"></textarea>
+            <label htmlFor="meow">Compose A New Meow!</label>
+            <textarea className="form-control" id="meow" name="meow" value={this.state.meow} onChange={this.handleChange} rows="3" placeholder="What's happening in that catnip crazed brain?"></textarea>
           </div>
         </form>
       </div>

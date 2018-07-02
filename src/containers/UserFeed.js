@@ -5,7 +5,7 @@ import { Switch, Link, Route, withRouter, Redirect } from 'react-router-dom'
 
 import { removeError } from "../store/actions/errors";
 import { getMeows } from "../store/actions/meows";
-import MeowForm from './MeowForm'
+import MeowForm from '../components/MeowForm'
 import MeowList from '../components/MeowList'
 
 const UserFeed = (props) => {
@@ -14,7 +14,7 @@ const UserFeed = (props) => {
     return (
       <div className="row">
       <div className="col-10 mx-auto">
-        <h1>UserFeed</h1>
+        <h4 className="mt-3">Welcome to MeowMeow</h4>
         <MeowForm />
         <MeowList getMeows={getMeows} meows={meows} />
         </div>

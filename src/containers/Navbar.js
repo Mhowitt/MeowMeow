@@ -18,31 +18,29 @@ class Navbar extends Component {
         </button>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
           <Link className="navbar-brand" to="/">MeowMeow</Link>
-          <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li className="nav-item active">
-              <a className="nav-link" href="#">Home<span className="sr-only">(current)</span></a>
+          <ul className="navbar-nav mx-2 mt-1 mt-lg-0">
+            <li className="nav-item active ml-2">
+              <Link className="nav-link" to="/'">Home<span className="sr-only">(current)</span></Link>
             </li>
-            <li className="nav-item">
+            <li className="nav-item ml-2 mr-5">
               <Link className="nav-link" to="/users">Other Meowers</Link>
             </li>
-            <li className="nav-item">
-              <button className="btn btn-outline-success my-2 my-sm-0" >Meow</button>
-            </li>
-            {this.props.currentUser.isAuthenticated ?
-              <li className="nav-item">
-                <button className="btn btn-outline-danger my-2 my-sm-0" onClick={this.logout}>Logout</button>
+          <li className="ml-5">
+            <form className="form-inline my-2 my-lg-0">
+              <input className="form-control mr-sm-2" type="search" placeholder="Search" ariaLabel="Search" />
+              <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </li>
+          {this.props.currentUser.isAuthenticated ?
+              <li className="nav-item ml-5">
+                <button className="btn btn-danger my-1 my-sm-0" onClick={this.logout}>Logout</button>
               </li>
             :
-              <li className="nav-item">
+              <li className="nav-item ml-5">
                 <button className="btn btn-outline-danger my-2 my-sm-0" > <Link to="/signin">Sign In</Link></button>
               </li>
             }
-
           </ul>
-          <form className="form-inline my-2 my-lg-0">
-            <input className="form-control mr-sm-2" type="search" placeholder="Search" ariaLabel="Search" />
-            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
         </div>
       </nav>
     );
