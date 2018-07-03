@@ -17,5 +17,6 @@ exports.up = function(knex, Promise) {
 };
 
 exports.down = function(knex, Promise) {
-  return Promise.all([knex.raw('DROP TABLE users CASCADE'), knex.raw('DROP TABLE posts CASCADE')])
+  return Promise.all([knex.schema.dropTable('posts'),
+  knex.schema.dropTable('users')])
 };

@@ -1,8 +1,8 @@
 const usersData = require('../users');
-const meowsData = require('../meows');
+const postsData = require('../posts');
 
 exports.seed = function(knex, Promise) {
-  return knex('meows').del()
+  return knex('posts').del()
     .then(() => {
       return knex('users').del();
     })
@@ -10,22 +10,22 @@ exports.seed = function(knex, Promise) {
       return knex('users').insert(usersData);
     })
     .then(() => {
-      let meowsPromises = [];
-      meowsData.forEach((meow) => {
-        let user = meow.user;
-        meowsPromises.push(createMeow(knex, meow, user));
+      let postsPromises = [];
+      postsData.forEach((post) => {
+        let user = post.user;
+        postsPromises.push(createPost(knex, post, user));
       });
 
-      return Promise.all(meowsPromises);
+      return Promise.all(postsPromises);
     });
 };
 
-const createMeow = (knex, meow, user) => {
+const createPost = (knex, post, user) => {
   return knex('users').where('handle', user).first()
   .then((userRecord) => {
-    return knex('meows').insert({
-      text: meow.text,
-      created_at: meow.created_at,
+    return knex('posts').insert({
+      text: post.text,
+      created_at: post.created_at,
       user_id: userRecord.id
     });
   });
