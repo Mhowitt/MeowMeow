@@ -8,6 +8,7 @@ Create your own repository on github and change the remote git remote rm origin 
 - npm install
 - createdb meow_meow-db
 - knex migrate:latest
+- knex seed:run (in order in seed the dummy data)
 
 In one terminal tab:
 -npm run server
