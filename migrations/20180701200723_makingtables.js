@@ -9,7 +9,7 @@ exports.up = function(knex, Promise) {
     knex.schema.createTable('posts', function(table) {
       table.increments('id').primary();
       table.string('text').notNullable();
-      table.timestamp('created_at');
+      table.timestamp('created_at').defaultTo(knex.fn.now());
       table.integer('user_id').unsigned()
         .references('users.id');
     })

@@ -7,6 +7,16 @@ class MeowForm extends Component {
       meow:""
     };
   }
+
+  handleSubmit = e => {
+    e.preventDefault();
+    console.log('hit submit')
+    this.props.addMeows(this.state).then(() =>{})
+    .catch(() => {
+      return;
+    })
+  }
+
     handleChange = e => {
       this.setState({ [e.target.name]: e.target.value });
     };
@@ -14,7 +24,7 @@ class MeowForm extends Component {
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label htmlFor="meow">Compose A New Meow!</label>
             <textarea className="form-control" id="meow" name="meow" value={this.state.meow} onChange={this.handleChange} rows="3" placeholder="What's happening in that catnip crazed brain?"></textarea>

@@ -37,9 +37,9 @@ export function setMeows(meows) {
   };
 }
 
-export function meowAdd(meows) {
+export function meowAdd(meow) {
   return {
     type: ADD_MEOW,
-    meows
+    meow
   };
 }

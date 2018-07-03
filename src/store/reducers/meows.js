@@ -8,7 +8,7 @@ export default function(state = DEFAULT_STATE, action) {
     case SET_MEOWS:
       return action.meows;
     case ADD_MEOW:
-      return [action.meows, ...state]
+      return [action.meow, ...state]
     default:
       return state;
   }
