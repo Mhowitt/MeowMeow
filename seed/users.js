@@ -1,0 +1,61 @@
+module.exports = [{
+  "firstName": "Jordan",
+  "lastName": "Goodinson",
+  "handle": "jgoodinson0"
+}, {
+  "firstName": "Layney",
+  "lastName": "Woodwind",
+  "handle": "lwoodwind1"
+}, {
+  "firstName": "Connor",
+  "lastName": "Balazin",
+  "handle": "cbalazin2"
+}, {
+  "firstName": "Jessamine",
+  "lastName": "Ousbie",
+  "handle": "jousbie3"
+}, {
+  "firstName": "Pall",
+  "lastName": "Navan",
+  "handle": "pnavan4"
+}, {
+  "firstName": "Syman",
+  "lastName": "Artindale",
+  "handle": "sartindale5"
+}, {
+  "firstName": "Mozes",
+  "lastName": "Patrickson",
+  "handle": "mpatrickson6"
+}, {
+  "firstName": "Gabby",
+  "lastName": "De Rye Barrett",
+  "handle": "gderyebarrett7"
+}, {
+  "firstName": "Octavia",
+  "lastName": "Gabbatiss",
+  "handle": "ogabbatiss8"
+}, {
+  "firstName": "Pauly",
+  "lastName": "Moye",
+  "handle": "pmoye9"
+}, {
+  "firstName": "Ronalda",
+  "lastName": "Skilling",
+  "handle": "rskillinga"
+}, {
+  "firstName": "Cassey",
+  "lastName": "Speir",
+  "handle": "cspeirb"
+}, {
+  "firstName": "Opaline",
+  "lastName": "Bromell",
+  "handle": "obromellc"
+}, {
+  "firstName": "Markos",
+  "lastName": "Abrami",
+  "handle": "mabramid"
+}, {
+  "firstName": "Brianna",
+  "lastName": "Boardman",
+  "handle": "bboardmane"
+}]

@@ -4,6 +4,9 @@ module.exports = {
     connection: 'postgres://localhost/meow_meow-db',
     migrations: {
       directory: './migrations'
+    },
+    seeds: {
+      directory: './seed/seedData'
     }
   }
 }
