@@ -31,16 +31,13 @@ class Navbar extends Component {
               <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
           </li>
-          {this.props.currentUser.isAuthenticated ?
-              <li className="nav-item ml-5">
-                <button className="btn btn-danger my-1 my-sm-0" onClick={this.logout}>Logout</button>
-              </li>
-            :
-              <li className="nav-item ml-5">
-                <button className="btn btn-outline-danger my-2 my-sm-0" > <Link to="/signin">Sign In</Link></button>
-              </li>
-            }
           </ul>
+          {this.props.currentUser.isAuthenticated ?
+                <button className="btn btn-danger my-1 my-sm-0 ml-auto" onClick={this.logout}>Logout</button>
+            :
+                <button className="btn btn-outline-danger my-2 my-sm-0" > <Link to="/signin">Sign In</Link></button>
+            }
+
         </div>
       </nav>
     );
