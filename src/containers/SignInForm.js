@@ -62,7 +62,7 @@ class SignInForm extends Component {
                 <button type="submit" className="btn btn-md btn-primary">Sign In!</button>
               </form>
               <div>
-                Don't have an account?
+                Don't have an account? &nbsp;
                 <Link to="/signup">Sign up here</Link>
               </div>
             </div>

@@ -92,7 +92,7 @@ class SignUpForm extends Component {
               <button type="submit" className="btn btn-lg btn-primary btn-block">Sign up!</button>
             </form>
             <div>
-              Have an account?
+              Have an account?  &nbsp;
               <Link to="/signin">Sign back in here!</Link>
             </div>
           </div>

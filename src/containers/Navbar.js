@@ -25,6 +25,11 @@ class Navbar extends Component {
             <li className="nav-item ml-2 mr-5">
               <Link className="nav-link" to="/users">Other Meowers</Link>
             </li>
+            {this.props.currentUser.isAuthenticated ?
+              <li className="nav-item active ml-2"><span className="nav-link">Welcome back {this.props.currentUser.user} !</span></li>
+            :
+            ""
+            }
           <li className="ml-5">
             <form className="form-inline my-2 my-lg-0">
               <input className="form-control mr-sm-2" type="search" placeholder="Search" ariaLabel="Search" />
